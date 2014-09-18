@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 
 
@@ -21,19 +22,9 @@ public class MultiThread1 {
 		PrimeThread p = new PrimeThread(prime, from, to);
 		p.start();
 		
-		while (p.isAlive())
-		{
-			try {
-				Thread.sleep(1000);
-				System.out.println("Still not finished...");
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		System.out.println(p.isPrime);
-		System.out.println(p.factor);
+		ArrayList<PrimeThread> threads = new ArrayList<PrimeThread>();
+		threads.add(p);
+		ThreadWaiter tw = new ThreadWaiter(threads, prime);
 		
 	}
 }

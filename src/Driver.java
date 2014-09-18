@@ -13,11 +13,11 @@ public class Driver {
 		
 		BigInteger prime = s.nextBigInteger();
 		
-		//new MultiThread1(prime).threadIt();
-		//new MultiThread2(prime).threadIt();
-		new MultiThread3(prime).threadIt();
-		//new MultiThread4(prime).threadIt();
-		//new MultiThread5(prime).threadIt();
+		new MultiThread1(prime).threadIt();
+		// new MultiThread2(prime).threadIt();
+		// new MultiThread3(prime).threadIt();
+		// new MultiThread4(prime).threadIt();
+		// new MultiThread5(prime).threadIt();
 		
 	}
 }

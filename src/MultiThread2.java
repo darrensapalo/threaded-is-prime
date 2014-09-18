@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 
 
@@ -29,22 +30,10 @@ public class MultiThread2 {
 		p2.start();
 		
 		// END OF: THIS IS FOR TWO THREADS
-		
-		while (p1.isAlive() && p2.isAlive())
-		{
-			try {
-				Thread.sleep(1000);
-				System.out.println("Still not finished...");
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		if(p1.isPrime && p2.isPrime)
-			System.out.println("The number " + prime + " is A PRIME number!");
-		else
-			System.out.println("The number " + prime + " is NOT A PRIME number!");
+		ArrayList<PrimeThread> threads = new ArrayList<PrimeThread>();
+		threads.add(p1);
+		threads.add(p2);
+		ThreadWaiter tw = new ThreadWaiter(threads, prime);
 		
 		//System.out.println(p.factor);
 		
