@@ -22,7 +22,7 @@ class PrimeThread extends Thread {
 		{
 			this.isPrime = true;
 			this.factor = TWO;
-		}else
+		}else {
 			for (BigInteger i = from.add(BigInteger.ONE); i.compareTo(to) <= 0; i = i.add(TWO)) {
 				if (prime.mod(i).equals(BigInteger.ZERO)) {
 					System.out.println("boop!");
@@ -31,6 +31,7 @@ class PrimeThread extends Thread {
 					break;
 				}
 			}
+		}
 		super.run();
 	}
 }

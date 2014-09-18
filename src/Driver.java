@@ -13,27 +13,11 @@ public class Driver {
 		
 		BigInteger prime = s.nextBigInteger();
 		
-		System.out.println("Beginning to check from 2 to sqrt(n)...");
-		
-		BigInteger from = new BigInteger("2");
-		BigInteger to = prime.shiftRight(1);
-		
-		PrimeThread p = new PrimeThread(prime, from, to);
-		p.start();
-		
-		while (p.isAlive())
-		{
-			try {
-				Thread.sleep(1000);
-				System.out.println("Still not finished...");
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		System.out.println(p.isPrime);
-		System.out.println(p.factor);
+		//new MultiThread1(prime).threadIt();
+		//new MultiThread2(prime).threadIt();
+		new MultiThread3(prime).threadIt();
+		//new MultiThread4(prime).threadIt();
+		//new MultiThread5(prime).threadIt();
 		
 	}
 }
