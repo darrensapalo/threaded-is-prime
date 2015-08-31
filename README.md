@@ -5,6 +5,19 @@ A multi-threaded java application that determines whether a number is prime.
 Given a number `n` and the number of threads `t`, the values 2 to `sqrt(n)` are divided evenly into `t` parts.
 These parts are processed by multiple threads to check if the number `n` is a prime number.
 
+# Sample output
+```
+How many threads do you wish to create? 4
+
+Created thread #1.
+Created thread #2.
+Created thread #3.
+Created thread #4.
+
+Is 32416190071 a prime number? true
+Execution Time: 36 ms
+```
+
 # Installation
 Please note that this is an eclipse project. To import it on Eclipse:
 
@@ -41,4 +54,3 @@ public static final String Large   = "32416190071";
 public static final String XLarge  = "48112959837082048697";
 public static final String XXLarge = "2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077";
 ```
-
