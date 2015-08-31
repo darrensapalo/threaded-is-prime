@@ -1,28 +1,28 @@
-package finalprime;
+package prime;
 import java.math.BigInteger;
 
+/**
+ * A worker thread that checks if a number is prime or not.
+ * At the end of processing, the public attribute isPrime is set to true of false.
+ *
+ */
 public class PrimeThread extends Thread {
-	private Thread t;
-	public int tNum;
+	public int threadNumber;
 	private BigInteger start;
 	private BigInteger end;
 	private BigInteger input;
-	public boolean result;
+	public boolean isPrime;
 	
-	/*
-	 * public void start() { System.out.println("Starting Thread #" + tNum); }
-	 */
-
-	public PrimeThread(int tNum, BigInteger start, BigInteger end, BigInteger input) {
-		this.tNum = tNum;
+	public PrimeThread(int threadNumber, BigInteger start, BigInteger end, BigInteger input) {
+		this.threadNumber = threadNumber;
 		this.start = start;
 		this.end = end;
 		this.input = input;
-		System.out.println("Thread #" + tNum + " is created...");
+		System.out.println("Created thread #" + threadNumber + ".");
 	}
 
 	public void run() {
-		result = isPrime(input);
+		isPrime = isPrime(input);
 	}
 
 	public boolean isPrime(BigInteger n) {
